@@ -74,6 +74,11 @@ jQuery.fn.iTableCSVo = function(props) {
   }
 
   function stripHTML(input) {
+    
+    if(input == null || typeof input == 'undefined') {
+      return '';
+    }
+    
     var replaceMap = [[/&amp;/g, '&'], [/&lt;/g, '<'], [/&gt;/g, '>'],
       [/&quot;/g, '"'], [/["]/g, '“'], [/<br[^>]*>/g, '\n'], [/\<[^\<]+\>/g, ''],
       [/&#x2F;/g, '/'], [/&#39;/g, "'"]];
